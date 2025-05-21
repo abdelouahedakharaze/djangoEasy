@@ -1,1 +1,2 @@
-# djangoEasythis is a repo for django students
+# djangoEasy
+this is a repo for django students
