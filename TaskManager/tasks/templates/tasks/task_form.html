@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %} {% block content %}
+<h2>{{ action }} Task</h2>
+<form method="post">
+  {% csrf_token %}
+  <div>{{ form.title.label_tag }} {{ form.title }}</div>
+  <div>{{ form.description.label_tag }} {{ form.description }}</div>
+  <div>
+    {{ form.completed }}
+    <label for="{{ form.completed.id_for_label }}" class="checkbox-label"
+      >Completed</label
+    >
+  </div>
+  <button type="submit" class="btn">Save</button>
+  <a href="{% url 'task_list' %}" class="btn">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %} {% block content %}
+<div class="task {% if task.completed %}completed{% endif %}">
+  <h2>{{ task.title }}</h2>
+  <p>{{ task.description|linebreaks }}</p>
+  <p>Created: {{ task.created|date:"M d, Y H:i" }}</p>
+  <p>Status: {% if task.completed %}Completed{% else %}Pending{% endif %}</p>
+
+  <div class="task-actions">
+    <a href="{% url 'task_update' pk=task.pk %}" class="btn">Edit</a>
+    <a href="{% url 'task_delete' pk=task.pk %}" class="btn btn-danger"
+      >Delete</a
+    >
+    <a href="{% url 'task_list' %}" class="btn">Back to List</a>
+  </div>
+</div>
+{% endblock %}
