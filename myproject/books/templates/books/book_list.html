@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Book Collection</title>
+    <link rel="stylesheet" href="{% static 'books/css/style.css' %}" />
+  </head>
+  <body>
+    <h1>My Book Collection</h1>
+
+    {% if books %} {% for book in books %}
+    <div class="book">
+      <h2>{{ book.title }}</h2>
+      <p class="author">by {{ book.author }}</p>
+      <p class="year">{{ book.year }}</p>
+    </div>
+    {% endfor %} {% else %}
+    <div class="no-books">
+      <p>No books in the collection yet.</p>
+      <a href="/admin/">Add some books!</a>
+    </div>
+    {% endif %}
+  </body>
+</html>
