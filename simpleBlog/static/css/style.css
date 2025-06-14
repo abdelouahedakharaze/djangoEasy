@@ -242,7 +242,6 @@ footer {
     box-shadow: 0 -4px 12px rgba(45, 80, 22, 0.3);
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .articles-grid {
         grid-template-columns: 1fr;
@@ -266,7 +265,6 @@ footer {
     }
 }
 
-/* Additional plant-themed decorative elements */
 .article-card::after {
     content: '🌿';
     position: absolute;
@@ -281,7 +279,6 @@ footer {
     opacity: 0.7;
 }
 
-/* Subtle leaf pattern background */
 body::before {
     content: '';
     position: fixed;
