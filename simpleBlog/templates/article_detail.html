@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block title %}{{ article.title }} - My Blog
+{%endblock %} {% block content %}
+<article class="article-detail">
+  <img
+    src="{{ article.image.url }}"
+    alt="{{ article.title }}"
+    class="article-image"
+  />
+  <h1>{{ article.title }}</h1>
+  <p class="article-date">
+    Published on {{ article.created_date|date:"F d, Y" }}
+  </p>
+  <div class="article-content">{{ article.content|linebreaks }}</div>
+</article>
+
+<div class="back-to-home">
+  <a href="{% url 'home' %}" class="btn">← Back to Home</a>
+</div>
+{% endblock %}
